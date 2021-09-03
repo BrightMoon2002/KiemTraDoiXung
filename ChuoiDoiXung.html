@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Check Palindrome:</title>
+</head>
+<body>
+<h1>Check Palindrome</h1>
+<script>
+    // cách 1:
+    // function reverseWord(arr) {
+    //     let reWord = arr.split('').reverse().join();
+    //     return reWord;
+    // }
+    // function checkPalindrome() {
+    //     let array = prompt('');
+    //     let checkArray = array.split('').join()
+    //     let result = reverseWord(array).toString();
+    //    if (result ===checkArray) {
+    //        alert("Palindrome")
+    //    } else {
+    //        alert("UnPalindrome")
+    //    }
+    // }
+    // checkPalindrome()
+
+
+    //Cách 2:
+    let isPalindrome = function(str) {
+        let strLen = str.length;
+        if (strLen === 0 || strLen === 1) {
+            return true;
+        }
+
+        if (str[0] === str[strLen - 1]) {
+            return isPalindrome( str.slice(1, strLen - 1) );
+        }
+
+        return false;
+    };
+    let a = prompt("nhập giá trị");
+    alert(isPalindrome(a));
+</script>
+</body>
+</html>
